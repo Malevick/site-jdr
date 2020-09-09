@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
 import { GiDiceTwentyFacesTwenty } from 'react-icons/gi';
@@ -10,35 +10,22 @@ import { CgClose } from 'react-icons/cg'
 
 function Header() {
 
-  const [loged, isLoged] = useState(false)
-  const [menuOpened, isMenuOpened] = useState(false)
+  const [loged, isLoged] = useState(false);
+  const [menuOpened, isMenuOpened] = useState(true);
 
   return (
-    <header>
+    <header onMouseOver={()=>isMenuOpened(true)} onMouseLeave={()=>isMenuOpened(false)}>
       <div className={!menuOpened ? 'header-top' : 'header-top open'}>
         <Link to='/' className='logo'>
           < GiDiceTwentyFacesTwenty />
           Le Repère
         </Link>
         <nav>
-          {loged &&
-            <Link to='/profil'>
-              <FaUserCircle /> Bienvenue user
-            </Link>
-          }
-          {!loged ?
-            <Link to='/login' onClick={()=>isLoged(true)}>
-              <IoMdLogIn /> Connexion
-            </Link>
-            :
-            <Link to='/logout' onClick={()=>isLoged(false)}>
-              <IoMdLogOut /> Déconnexion
-            </Link>
-          }
-          <Link onClick={()=>isMenuOpened(!menuOpened)}>
-            {!menuOpened ?
-            <span>Catégories</span>
-            : <span>Catégories</span>}
+          <Link to='/profil'>
+            <FaUserCircle /> Bienvenue user
+          </Link>
+          <Link to='/logout' onClick={()=>isLoged(false)}>
+            <IoMdLogOut /> Déconnexion
           </Link>
         </nav>
       </div>

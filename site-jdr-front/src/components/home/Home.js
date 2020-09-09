@@ -27,10 +27,10 @@ function Home() {
 
   return (
     <main>
-      {(!userIsLoaded) ? <h1>waiting...</h1> : <p>{user.biography}</p>}
-      {(!userIsLoaded) ? <h1>waiting...</h1> : <p>{user.biography}</p>}
-      {(!userIsLoaded) ? <h1>waiting...</h1> : <p>{user.biography}</p>}
-      {(!userIsLoaded) ? <h1>waiting...</h1> : <p>{user.biography}</p>}
+      {(!userIsLoaded) ? <h1>waiting...</h1> : <section>{user.biography}</section>}
+      {(!userIsLoaded) ? <h1>waiting...</h1> : <section>{user.biography}</section>}
+      {(!userIsLoaded) ? <h1>waiting...</h1> : <section>{user.biography}</section>}
+      {(!userIsLoaded) ? <h1>waiting...</h1> : <section>{user.biography}</section>}
     </main>
   )
 }

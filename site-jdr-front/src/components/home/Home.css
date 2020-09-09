@@ -1,3 +1,9 @@
 main{
-  padding: 2rem
+  padding: 0rem 1rem;
+}
+main section{
+  background-color: white;
+  color: rgb(29, 29, 29);
+  padding: 1rem;
+  margin: 1rem 0rem;
 }
