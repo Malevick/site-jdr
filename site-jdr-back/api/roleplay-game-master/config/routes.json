@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/roleplay-game-masters",
+      "handler": "roleplay-game-master.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/roleplay-game-masters/count",
+      "handler": "roleplay-game-master.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/roleplay-game-masters/:id",
+      "handler": "roleplay-game-master.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/roleplay-game-masters",
+      "handler": "roleplay-game-master.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/roleplay-game-masters/:id",
+      "handler": "roleplay-game-master.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/roleplay-game-masters/:id",
+      "handler": "roleplay-game-master.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

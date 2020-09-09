@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roleplay_players",
+  "info": {
+    "name": "Roleplay<->Player"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "player_id": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "roleplay_id": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "player": {
+      "model": "profil"
+    },
+    "roleplay": {
+      "model": "roleplay"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/annexes",
+      "handler": "annex.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/annexes/count",
+      "handler": "annex.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/annexes/:id",
+      "handler": "annex.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/annexes",
+      "handler": "annex.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/annexes/:id",
+      "handler": "annex.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/annexes/:id",
+      "handler": "annex.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

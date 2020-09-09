@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "secondary_characters",
+  "info": {
+    "name": "Secondary Character"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "characteristic": {
+      "type": "json"
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "roleplay": {
+      "via": "secondary_characters",
+      "model": "roleplay"
+    },
+    "author": {
+      "model": "profil",
+      "via": "secondary_characters"
+    },
+    "type": {
+      "model": "type"
+    }
+  }
+}

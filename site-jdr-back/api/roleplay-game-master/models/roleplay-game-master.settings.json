@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roleplay_game_masters",
+  "info": {
+    "name": "Roleplay<->Game-master"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "game_master": {
+      "model": "profil"
+    },
+    "roleplay": {
+      "model": "roleplay"
+    },
+    "roleplay_id": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "gamemaster_id": {
+      "type": "integer",
+      "min": 1,
+      "required": true
+    }
+  }
+}

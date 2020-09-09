@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/roleplays",
+      "handler": "roleplay.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/roleplays/count",
+      "handler": "roleplay.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/roleplays/:id",
+      "handler": "roleplay.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/roleplays",
+      "handler": "roleplay.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/roleplays/:id",
+      "handler": "roleplay.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/roleplays/:id",
+      "handler": "roleplay.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

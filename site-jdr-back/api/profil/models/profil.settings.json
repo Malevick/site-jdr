@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profils",
+  "info": {
+    "name": "Profil"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "pseudo": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "biography": {
+      "type": "richtext",
+      "required": true
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "favorit_roleplay": {
+      "model": "roleplay"
+    },
+    "alert_me": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "alert_all": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "type": {
+      "model": "type"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "profil"
+    },
+    "sessions": {
+      "via": "author",
+      "collection": "session"
+    },
+    "annexes": {
+      "via": "author",
+      "collection": "annex"
+    },
+    "comments": {
+      "via": "author",
+      "collection": "comment"
+    },
+    "main_characters": {
+      "via": "author",
+      "collection": "main-character"
+    },
+    "secondary_characters": {
+      "via": "author",
+      "collection": "secondary-character"
+    }
+  }
+}

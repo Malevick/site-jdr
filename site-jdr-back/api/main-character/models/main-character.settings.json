@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_characters",
+  "info": {
+    "name": "Main Character"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "characteristic": {
+      "type": "json",
+      "required": false
+    },
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "final_card": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "author": {
+      "model": "profil",
+      "via": "main_characters"
+    },
+    "roleplay": {
+      "via": "main_characters",
+      "model": "roleplay"
+    },
+    "type": {
+      "model": "type"
+    }
+  }
+}

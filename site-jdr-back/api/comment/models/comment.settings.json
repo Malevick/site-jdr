@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "article_id": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "article_type": {
+      "model": "type"
+    },
+    "author": {
+      "model": "profil",
+      "via": "comments"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/secondary-characters",
+      "handler": "secondary-character.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/secondary-characters/count",
+      "handler": "secondary-character.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/secondary-characters/:id",
+      "handler": "secondary-character.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/secondary-characters",
+      "handler": "secondary-character.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/secondary-characters/:id",
+      "handler": "secondary-character.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/secondary-characters/:id",
+      "handler": "secondary-character.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

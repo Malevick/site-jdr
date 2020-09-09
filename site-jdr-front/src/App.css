@@ -1,0 +1,28 @@
+:root{
+  --background-color: rgb(53, 57, 59);
+  --main-text-color: white;
+  --link-color: rgb(255, 223, 162);
+  --link-hover-color: rgb(255, 208, 122);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s;
+}
+
+body{
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+}
+
+a{
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover{
+  color: var(--link-hover-color);
+  text-decoration: none;
+}
