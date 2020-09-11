@@ -11,4 +11,4 @@ export const TYPES = {
   LINK : 10,
 };
 
-export const HOST = "localhost:1337";
+export const HOST = "http://localhost:1337";

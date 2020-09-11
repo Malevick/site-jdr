@@ -1,9 +1,21 @@
-main{
+.main{
   padding: 0rem 1rem;
 }
-main section{
-  background-color: white;
-  color: rgb(29, 29, 29);
+
+.main section{
   padding: 1rem;
   margin: 1rem 0rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main section a {
+  padding: 1rem;
+}
+
+.main article{
+  background-color: white;
+  color: rgb(29, 29, 29);
 }

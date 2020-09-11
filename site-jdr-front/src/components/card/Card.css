@@ -1,0 +1,17 @@
+.card {
+    width: 10rem;
+    height: 13rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+    background-blend-mode: overlay;
+    background-color: #887f5c;
+    cursor: pointer;
+    padding: 1rem;
+}    
