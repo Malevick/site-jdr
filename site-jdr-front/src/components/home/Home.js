@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 
 function Home() {
 
-  const [roleplays, setRoleplays] = useState([])
-  const [roleplaysAreLoaded, setRoleplaysAreLoaded] = useState(false);
-  const [card, setCard] = useState({});
+  const [roleplay, setRoleplay] = useState({});
+  const [roleplayIsLoading, setRoleplayIsLoading] = useState(true);
+  const [annexe, setAnnexe] = useState({});
+  const [annexeIsLoading, setAnnexeIsLoading] = useState(true);
+
   //Le [] final permet de ne lancer qu'une requete
   useEffect(()=>{
-    fetch( HOST +"/roleplays", {
+
+    //Roleplay
+    fetch( HOST +"/roleplays?_sort=created_at:desc&_limit=1", {
       method: "GET",
       headers: {
         'Content-Type' : 'application/json'
@@ -19,28 +23,43 @@ function Home() {
     })
     .then(response => response.json())
     .then(json => {
-      setRoleplays(json);
+      if(json.length > 0 )
+        setRoleplay(json[0]);
     })
     .finally(()=>{
-      setRoleplaysAreLoaded(true);
+      setRoleplayIsLoading(false);
+    });
+    
+    //Annexe
+    fetch( HOST +"/annexes?_sort=created_at:desc&_limit=1", {
+      method: "GET",
+      headers: {
+        'Content-Type' : 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(json => {
+      if(json.length > 0 )
+        setAnnexe(json[0]);
+    })
+    .finally(()=>{
+      setAnnexeIsLoading(false);
     });
   }, [])
-
-  const roleplayCard = roleplays.map((roleplay) => 
-      <Link to='/jeux-de-role' key={roleplay.id}>
-        <Card article = {{id: roleplay.id, name: roleplay.name, img: ""}}/>
-      </Link>
-    )
 
   return (
     <main className="main">
       <section>
-        <article>
-          <p>Bienvenue sur le site :)</p>
-        </article>
-      </section>
-      <section>
-        {(!roleplaysAreLoaded) ? <h1>waiting...</h1> : roleplayCard}
+        {roleplayIsLoading ? <p>loading...</p> :   
+            <Link to={'/jeux-de-role/' + roleplay.id} key={roleplay.id} params={{id : roleplay.id}}>
+              <Card article = {{id: roleplay.id, name: roleplay.name, img: ""}}/>
+            </Link>
+        }
+        {annexeIsLoading ? <p>loading...</p> :  
+          <Link to='/annexe' key={annexe.id}>
+            <Card article = {{id: annexe.id, name: annexe.name, img: ""}}/>
+          </Link>
+        }
       </section>
     </main>
   )
