@@ -48,7 +48,7 @@ function Home() {
   }, [])
 
   return (
-    <main className="main">
+    <main className="home">
       <section>
         {roleplayIsLoading ? <p>loading...</p> :   
             <Link to={'/jeux-de-role/' + roleplay.id} key={roleplay.id} params={{id : roleplay.id}}>

@@ -12,3 +12,13 @@ export const TYPES = {
 };
 
 export const HOST = "http://localhost:1337";
+
+export const ERRORS = {
+  wrongId : "Aucun article ne porte ce numéro"
+};
+
+export const getRandom = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1 )) + min;
+}

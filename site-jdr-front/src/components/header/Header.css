@@ -1,16 +1,11 @@
-:root{
-  --background-header-color: rgb(20, 22, 22);
-  --background-header-color-secondary: rgb(35, 38, 39, 0.95);
-  --background-menu-color: rgb(27, 29, 31);
-  --background-menu-color-opacity: rgba(35, 38, 39, 0.95);
-}
 
 header{
   position: sticky;
   top: 0px;
   left: 0px;
-  font-size: 1.1rem;
-
+  font-size: 1.3rem;
+  z-index: 1000;
+  font-family: var(--secondary-font);
 }
 
 header .header-top{
@@ -24,6 +19,7 @@ header .header-top{
   z-index: 100;
   box-shadow: 0rem 0rem 5px rgb(21, 22, 22);
 }
+
 header .header-top.open{
   box-shadow: none;
 }
@@ -39,8 +35,8 @@ header .header-menu{
   justify-content: space-around;
   align-items: center;
   padding: 0.5rem;
-  position: fixed;
 }
+
 header .header-menu.open{
   transform: translateY(0px);
   opacity: 1;
@@ -60,11 +56,13 @@ header .header-top nav a{
 header .logo{
   font-size: 2rem;
 }
+
 header .logo svg{
   font-size: 2rem;
   margin-right: 0.5rem;
   transform: scale(0.9);
 }
+
 header .logo:hover svg{
   transform: rotate(180deg) scale(1)
 }

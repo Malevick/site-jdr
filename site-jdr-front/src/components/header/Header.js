@@ -30,7 +30,7 @@ function Header() {
         </nav>
       </div>
       <ul className={!menuOpened ? 'header-menu' : 'header-menu open'} >
-        <Link to='/jeux-de-role'>
+        <Link to='/jeux-de-roles'>
           Jeux de rôle
         </Link>
         <Link to='/personnages-principaux'>
