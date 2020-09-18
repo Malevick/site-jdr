@@ -1,14 +1,16 @@
 :root{
   --background-color: #35393b;
   --main-text-color: white;
-  --link-color: rgb(255, 239, 210);
-  --link-hover-color: rgb(255, 216, 143);
+  --title-color: rgb(255, 255, 255);
+  --link-color: rgb(255, 198, 93);
+  --link-hover-color: rgb(255, 167, 4);
+  --header-text-color: rgb(206, 227, 255);
   --background-header-color: rgb(20, 22, 22);
   --background-header-color-secondary: rgb(35, 38, 39, 0.95);
   --background-menu-color: rgb(27, 29, 31);
   --background-menu-color-opacity: rgba(35, 38, 39, 0.95);
-  --first-font: Arial, Helvetica, sans-serif;
-  --secondary-font : 'IBM Plex Sans', sans-serif;
+  --first-font: 'Open Sans', sans-serif;
+  --secondary-font : 'Bad Script', cursive;
 }
 
 *{
@@ -18,45 +20,91 @@
   transition: ease-in-out 0.3s;
 }
 
+html{
+  font-size: 62.5%;
+}
+
 body{
   background-image: linear-gradient(var(--background-color), var(--background-header-color));
   color: var(--main-text-color);
   font-family: var(--first-font);
   min-height: 100vh;
+  font-size: 1.5rem;
+}
+
+img{
+  max-width: 100%;
 }
 
 a{
   color: var(--link-color);
   text-decoration: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 a:hover{
   color: var(--link-hover-color);
-  text-decoration: none;
+  text-decoration: none
 }
 
-h1, h2, h3, h4, h5{
+h1, h2{
   font-family: var(--secondary-font);
-  color: var(--link-color);
+  color: var(--title-color);
+  font-weight: lighter;
+}
+h3, h4, h5{
+  font-family: var(--first-font);
+  font-weight: lighter;
+  color: var(--title-color);
+}
+
+h1{
+  font-size: 4rem;
+  padding: 1rem 0rem;
+}
+h2{
+  font-size: 2.5rem;
+  padding: 0.8rem 0rem;
+}
+h3{
+  font-size: 2.2rem;
+  padding: 0.9rem 0rem;
+}
+h4{
+  font-size: 1.7rem;
+  padding: 0.7rem 0rem;
+}
+h5{
+  font-size: 1.5rem;
+  padding: 0.5rem 0rem;
+}
+p{
+  padding: 0.5rem 0rem;
 }
 
 main{
   padding: 1rem;
 }
 
-main section{
-  padding: 1rem;
+/* DIVERS */
+
+.list{
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
 }
-
-main section a {
-  padding: 1rem;
+.list>*{
+  margin : 1rem
 }
 
-main article{
-  background-color: white;
-  color: rgb(29, 29, 29);
+.thumbnail{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-position: center;
+  background-size: cover;
 }

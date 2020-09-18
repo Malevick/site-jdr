@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Card.scss';
-import {getRandom} from '../../utilities/Const';
+import {getRandom, HOST} from '../../utilities/Const';
 
 /**
  * @param {Object} props - article
  * @param {number} props.id - id de l'article
  * @param {string} props.name - nom/titre de l'article
  * @param {string} props.type - type d'article
+ * @param {stryle} props.img - image a afficher 
  */
 function Card(props) {
     
   const article = props.article;
   const randomSize = getRandom(3,5);
 
-  const style = {
-    animation : 'gradient'+ getRandom(1,3) + ' '+ getRandom(20,30) + 's linear alternate infinite',
-    backgroundSize: randomSize * 100 +'% '+ randomSize * 100 +'%'
-  }
+  const [style, setStyle] = useState({
+      animation : 'gradient'+ getRandom(1,3) + ' '+ getRandom(20,30) + 's linear alternate infinite',
+      backgroundSize: randomSize * 100 +'% '+ randomSize * 100 +'%'
+    })
+
+  useEffect(() => {
+    if(article.img != undefined && article.img != null ){
+      setStyle({
+        backgroundImage : 'url(' + HOST + article.img.url +')'
+      })
+    }
+  }, [])
 
   const enter = (event)=>{
 
@@ -47,12 +56,14 @@ function Card(props) {
       return result;
     }
 
-    event.currentTarget.style.transform = "rotate("+ transform +"deg) scale(1.0"+ (transform == 5 ? 9 : transform * 2) +")";
+    event.currentTarget.style.transform = "rotate("+ transform +"deg) scale(1.0"+ (transform == 5 ? 99 : transform * 2) +")";
     event.currentTarget.style.boxShadow = transform * 5 + "px "+ transform * 5 + "px 2px rgba(20, 22, 22, "+ opacity() +")" ;
+    event.currentTarget.style.zIndex = '100'
   }
   const leave = (event)=>{
     event.currentTarget.style.transform = "rotate(0deg) scale(1)";
     event.currentTarget.style.boxShadow = "none";
+    event.currentTarget.style.zIndex = 'auto'
   }
 
   return (
@@ -60,7 +71,7 @@ function Card(props) {
       { article.id != undefined ?
         <div onMouseOver={enter} onMouseOut={leave} className="card" id={article.id} 
           style={style}>
-            <h1>{article.name}</h1>
+            <h4>{article.name}</h4>
             { article.type != undefined && <h2>{article.type}</h2>}
         </div>
         :

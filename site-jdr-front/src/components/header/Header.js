@@ -1,35 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import { GiDiceTwentyFacesTwenty } from 'react-icons/gi';
-import { IoMdLogIn, IoMdLogOut, IoMdClose } from 'react-icons/io';
-import { FaUserCircle } from 'react-icons/fa';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { CgClose } from 'react-icons/cg'
-
+import { GiDiceTwentyFacesTwenty, GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdLogOut } from 'react-icons/io';
 
 function Header() {
 
   const [loged, isLoged] = useState(false);
-  const [menuOpened, isMenuOpened] = useState(true);
+  const [displayPhone, isDisplayPhone] = useState(window.innerWidth <= 480 ? true : false)
+  const [menuOpened, isMenuOpened] = useState(!displayPhone);
+
+
+  const handleScroll = (e)=>{
+    isMenuOpened(window.scrollY === 0 ? true : false)
+  }
+
+  useEffect(() => {
+    !displayPhone && window.addEventListener('scroll', handleScroll);
+  }, [])
 
   return (
-    <header onMouseOver={()=>isMenuOpened(true)} onMouseLeave={()=>isMenuOpened(false)}>
+    <header onMouseOver={()=>{!displayPhone && isMenuOpened(true)}}>
       <div className={!menuOpened ? 'header-top' : 'header-top open'}>
         <Link to='/' className='logo'>
           < GiDiceTwentyFacesTwenty />
-          Le Repère
+          Le Repaire
         </Link>
-        <nav>
-          <Link to='/profil'>
-            <FaUserCircle /> Bienvenue user
-          </Link>
-          <Link to='/logout' onClick={()=>isLoged(false)}>
-            <IoMdLogOut /> Déconnexion
-          </Link>
-        </nav>
+        {displayPhone ?
+          <nav>
+            <Link to='/profil'>
+              <div className='thumbnail' style={{backgroundImage : 'url(http://localhost:1337/uploads/chtullu_e2601520f7.jpg)'}}></div>
+            </Link>
+            <Link to='/logout' onClick={()=>isLoged(false)}>
+              <IoMdLogOut />
+            </Link>
+            <Link>
+              <GiHamburgerMenu onClick={()=>isMenuOpened(!menuOpened)}/>
+            </Link>
+          </nav>
+        :
+          <nav>
+            <Link to='/profil'>
+              <div className='thumbnail' style={{backgroundImage : 'url(http://localhost:1337/uploads/chtullu_e2601520f7.jpg)'}}></div> Bienvenue Rascasse
+            </Link>
+            <Link to='/logout' onClick={()=>isLoged(false)}>
+              <IoMdLogOut /> Déconnexion
+            </Link>
+          </nav>
+        }
       </div>
       <ul className={!menuOpened ? 'header-menu' : 'header-menu open'} >
+        
         <Link to='/jeux-de-roles'>
           Jeux de rôle
         </Link>

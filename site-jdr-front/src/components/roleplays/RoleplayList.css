@@ -1,20 +1,19 @@
+.roleplay-list{
+  padding-top: 0px;
+  margin-top: -1rem;
+}
+
 .roleplay-list-title{
   text-align: left;
   margin-left: 2rem;
   padding: 0.5rem;
   position: relative;
-  background-color: #2f3234;
   display: inline-block;
-}
-
-.roleplay-list-title-line{
-  height: 3px;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  background-color: var(--link-color);
 }
 
 .roleplay-list-title-box{
   position: relative;
+}
+
+.roleplay-list-content{
 }

@@ -1,8 +1,7 @@
 .card {
   font-family: var(--secondary-font);
-  font-size: 0.9rem;
-  width: 10rem;
-  height: 13rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 0.5rem;
   overflow: hidden;
   display: flex;
@@ -11,12 +10,19 @@
   text-align: center;
   align-items: center;
   cursor: pointer;
-  padding: 1rem;
   transition: 0.2s;
   color: var(--link-color);
   background: radial-gradient(rgba(255, 234, 206, 1),rgba(243, 149, 48, 0.7), rgba(143, 113, 88, 0.3), rgba(53, 57, 59, 0.1));
   background: radial-gradient(rgb(206, 237, 255),rgba(48, 116, 243, 0.7), rgba(88, 103, 143, 0.3), rgba(53, 57, 59, 0.1));
   text-orientation: upright;
+  background-size: cover;
+  background-position: center;
+}
+
+.card h4{
+  padding: 1.5rem 0.5rem;
+  background-image: linear-gradient(rgba(0, 7, 10, 0.9), rgba(0, 8, 12, 0));
+  width: 100%;
 }
 
 @keyframes gradient1 {

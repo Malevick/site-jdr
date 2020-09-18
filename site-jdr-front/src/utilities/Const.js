@@ -11,6 +11,12 @@ export const TYPES = {
   LINK : 10,
 };
 
+export const STATUS = {
+  1 : 'A venir',
+  2 : 'En cours',
+  3 : 'Terminé'
+}
+
 export const HOST = "http://localhost:1337";
 
 export const ERRORS = {

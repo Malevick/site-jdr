@@ -25,43 +25,39 @@ function Home() {
     .then(json => {
       if(json.length > 0 )
         setRoleplay(json[0]);
+      return fetch( HOST +"/annexes?_sort=created_at:desc&_limit=1", {
+        method: "GET",
+        headers: {
+          'Content-Type' : 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        if(json.length > 0 )
+          setAnnexe(json[0]);
+      })
     })
     .finally(()=>{
       setRoleplayIsLoading(false);
+      setAnnexeIsLoading(false);
+
     });
     
-    //Annexe
-    fetch( HOST +"/annexes?_sort=created_at:desc&_limit=1", {
-      method: "GET",
-      headers: {
-        'Content-Type' : 'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(json => {
-      if(json.length > 0 )
-        setAnnexe(json[0]);
-    })
-    .finally(()=>{
-      setAnnexeIsLoading(false);
-    });
   }, [])
 
   return (
-    <main className="home">
-      <section>
-        {roleplayIsLoading ? <p>loading...</p> :   
-            <Link to={'/jeux-de-role/' + roleplay.id} key={roleplay.id} params={{id : roleplay.id}}>
-              <Card article = {{id: roleplay.id, name: roleplay.name, img: ""}}/>
-            </Link>
-        }
-        {annexeIsLoading ? <p>loading...</p> :  
-          <Link to='/annexe' key={annexe.id}>
-            <Card article = {{id: annexe.id, name: annexe.name, img: ""}}/>
+    <section className="home">
+      {(roleplayIsLoading && annexeIsLoading) ? <p>Chargement</p> :   
+        <div className='list'>
+          <Link to={'/jeux-de-role/' + roleplay.id} params={{id : roleplay.id}}>
+            <Card article = {{id: roleplay.id, name: roleplay.name, img: roleplay.img}}/>
           </Link>
-        }
-      </section>
-    </main>
+          <Link to='/annexe'>
+            <Card article = {{id: annexe.id, name: annexe.name, img: annexe.img}}/>
+          </Link>
+        </div>
+      }
+    </section>
   )
 }
 

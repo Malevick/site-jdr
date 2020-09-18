@@ -19,7 +19,7 @@ export default function RoleplayList() {
       })
       .then(response => response.json())
       .then(json => {
-          setRoleplays(json);
+        setRoleplays(json);
       })
       .finally(()=>{
         setRoleplaysAreLoading(false);
@@ -28,22 +28,19 @@ export default function RoleplayList() {
   }, [])
 
   return (
-    <main className="roleplay-list">
-      <div className="roleplay-list-title-box">
-        <div className="roleplay-list-title-line"></div>
-        <h1 className="roleplay-list-title">Jeux de Rôle</h1>
-      </div>
-      <section>
+    <section className='roleplay-list'>
+      <h1 className='roleplay-list-title'>Jeux de Rôle</h1>
+      <div className='roleplay-list-content list'>
         {roleplaysAreLoading ? 
           <>Chargement...</> 
           : 
           roleplays.map((roleplay) =>
             <Link to={'/jeux-de-role/' + roleplay.id} key={roleplay.id} params={{id : roleplay.id}}>
-              <Card article={{id : roleplay.id, name : roleplay.name}}/>
+              <Card article={{id : roleplay.id, name : roleplay.name, img : roleplay.image}}/>
             </Link>
           )
         }
-      </section>
-    </main>
+      </div>
+    </section>
   )
 }
