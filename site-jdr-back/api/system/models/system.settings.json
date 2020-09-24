@@ -22,11 +22,9 @@
     "type": {
       "model": "type"
     },
-    "dice": {
-      "model": "dice"
-    },
-    "nb_dice_copie": {
-      "type": "integer"
+    "roleplay": {
+      "via": "system",
+      "model": "roleplay"
     }
   }
 }

@@ -1,14 +1,20 @@
 .jeu-de-role{
-  padding: 3rem;
-  padding-top: 0rem;
+  padding: 1rem;
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  margin: auto;
+  max-width: 120rem;
 }
 
 .jeu-de-role-content{
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
+}
+
+.jeu-de-role-main{
+  padding: 5rem;
+  background-color: white;
 }
 
 .jeu-de-role-header{
@@ -18,15 +24,29 @@
   align-items: center;
 }
 
+.jeu-de-role-main h1,
+.jeu-de-role-main h2,
+.jeu-de-role-main h3,
+.jeu-de-role-main h4,
+.jeu-de-role-main h5,
+.jeu-de-role-main .jeu-de-role-content {
+  color: var(--background-header-color)
+}
 
+.jeu-de-role-main a{
+  color: var(--link-hover-color);
+  text-decoration: underline transparent;
+}
+.jeu-de-role-main a:hover{
+  text-decoration: underline;
+}
 
 .jeu-de-role .img{
   width: 20rem;
   height: 20rem;
   background-position: center;
   background-size: cover;
-  margin-right: 1rem;
-  border-radius: 1rem;
+  margin-right: 2rem;
 }
 
 .jeu-de-role .mj{
@@ -34,17 +54,76 @@
     justify-content: flex-start;
     align-items: center;
 }
-
 .jeu-de-role .mj .thumbnail{
   margin : 0rem 0.5rem
 }
 
-.jeu-de-role .back{
-  flex-basis: 100%;
+
+.jeu-de-role aside{
+  padding: 1rem 1.7rem;
+  min-width: 20rem;
+  background-image: linear-gradient(var(--background-header-color), transparent);
+  margin-left: 1rem;
+}
+
+.jeu-de-role aside p,
+.jeu-de-role aside li{
+  font-size: 1.3rem;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.jeu-de-role aside li a{
+  display: inline;
 }
 
 @media screen and (max-width : 768px){
   .jeu-de-role{
-    flex-flow : row wrap;
+    flex-flow : column wrap;
+  }
+
+  .jeu-de-role aside{
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0px;
+  }
+
+  .jeu-de-role aside h4,
+  .jeu-de-role aside h5{
+    text-align: center;
+  }
+
+  .jeu-de-role aside>div{
+    padding: 0.5rem;
+  }
+
+  .jeu-de-role aside p,
+  .jeu-de-role aside li{
+    padding-left: 0rem;
+  }
+  
+}
+
+@media screen and (max-width: 480px){
+  
+  .jeu-de-role-header{
+    flex-flow : column nowrap;
+    max-width: 100%;
+  }
+
+  .jeu-de-role-header .img{
+    margin: 0px;
+  }
+  
+  .jeu-de-role-main{
+    padding: 2rem
+  }
+
+  .jeu-de-role{
+    padding: 0rem;
   }
 }

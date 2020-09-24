@@ -20,7 +20,7 @@ function Card(props) {
     })
 
   useEffect(() => {
-    if(article.img != undefined && article.img != null ){
+    if(article.img !== undefined && article.img !== null ){
       setStyle({
         backgroundImage : 'url(' + HOST + article.img.url +')'
       })
@@ -56,7 +56,7 @@ function Card(props) {
       return result;
     }
 
-    event.currentTarget.style.transform = "rotate("+ transform +"deg) scale(1.0"+ (transform == 5 ? 99 : transform * 2) +")";
+    event.currentTarget.style.transform = "rotate("+ transform +"deg) scale(1.0"+ (transform === 5 ? 99 : transform * 2) +")";
     event.currentTarget.style.boxShadow = transform * 5 + "px "+ transform * 5 + "px 2px rgba(20, 22, 22, "+ opacity() +")" ;
     event.currentTarget.style.zIndex = '100'
   }
@@ -68,11 +68,11 @@ function Card(props) {
 
   return (
     <>
-      { article.id != undefined ?
+      { article.id !== undefined ?
         <div onMouseOver={enter} onMouseOut={leave} className="card" id={article.id} 
           style={style}>
             <h4>{article.name}</h4>
-            { article.type != undefined && <h2>{article.type}</h2>}
+            { article.type !== undefined && <h2>{article.type}</h2>}
         </div>
         :
         <p>Aucun article à afficher</p>

@@ -1,14 +1,14 @@
-.roleplay-list{
+.secondary-characters-list{
   padding-top: 0px;
   margin-top: -1rem;
 }
 
-.roleplay-list-title-box{
+.secondary-characters-list-title-box{
   position: relative;
 }
 
 @media screen and (max-width : 768px){
-  .roleplay-list-title{
+  .secondary-characters-list-title{
     text-align: center;
   }
 }

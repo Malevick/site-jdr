@@ -24,9 +24,6 @@
       "max": 3,
       "min": 1
     },
-    "system": {
-      "model": "system"
-    },
     "type": {
       "model": "type"
     },
@@ -57,6 +54,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "system": {
+      "model": "system",
+      "via": "roleplay"
     }
   }
 }

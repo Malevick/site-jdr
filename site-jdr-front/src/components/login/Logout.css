@@ -1,0 +1,25 @@
+.logout{
+  cursor: pointer;
+  color: var(--header-text-color);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout:hover{
+  color: var(--link-color);
+}
+
+.logout svg{
+  display: flex;
+  margin-right: 0.5rem;
+  font-size: 2.3rem;
+}
+
+@media screen and (max-width : 768px) {
+  .logout svg{
+    margin-right: 0rem;
+    font-size: inherit;
+  }
+}

@@ -1,0 +1,134 @@
+.personnage-principal{
+  padding: 1rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  max-width: 120rem;
+}
+
+.personnage-principal-content{
+  padding: 1rem 0rem;
+}
+
+.personnage-principal-main{
+  padding: 5rem;
+  background-color: white;
+  max-width: 100%;
+}
+
+.personnage-principal-header{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 100%;
+}
+
+.personnage-principal-main h1,
+.personnage-principal-main h2,
+.personnage-principal-main h3,
+.personnage-principal-main h4,
+.personnage-principal-main h5,
+.personnage-principal-main .personnage-principal-content {
+  color: var(--background-header-color)
+}
+
+.personnage-principal-main a{
+  color: var(--link-hover-color);
+  text-decoration: underline transparent;
+}
+.personnage-principal-main a:hover{
+  text-decoration: underline;
+}
+
+.personnage-principal .img{
+  width: 20rem;
+  height: 20rem;
+  background-position: center;
+  background-size: cover;
+  margin-right: 2rem;
+}
+
+.personnage-principal-header h5{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.personnage-principal .joueur .thumbnail,
+.personnage-principal .jdr a{
+  margin : 0rem 0.5rem
+}
+
+.personnage-principal aside{
+  padding: 1rem ;
+  min-width: 22rem;
+  background-image: linear-gradient(var(--background-header-color), transparent);
+  margin-left: 1rem;
+}
+.personnage-principal aside h4{
+  text-align: center;
+  width: 100%;
+}
+
+.personnage-principal aside .img{
+  margin: 0rem;
+}
+
+.personnage-principal aside li a{
+  display: inline;
+}
+
+@media screen and (max-width : 768px){
+  .personnage-principal{
+    flex-flow : column wrap;
+  }
+
+  .personnage-principal aside{
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0px;
+  }
+
+  .personnage-principal aside>div{
+    padding: 0.5rem;
+  }
+
+  .personnage-principal aside h4,
+  .personnage-principal aside h5{
+    text-align: center;
+  }
+
+  .personnage-principal aside p,
+  .personnage-principal aside li{
+    padding-left: 0rem;
+  }
+  
+}
+
+@media screen and (max-width: 480px){
+  
+  .personnage-principal-header{
+    flex-flow : column nowrap;
+    max-width: 100%;
+  }
+
+  .personnage-principal-header .img{
+    margin: 0px;
+  }
+  
+  .personnage-principal-main{
+    padding: 2rem
+  }
+
+  .personnage-principal{
+    padding: 0rem;
+  }
+}

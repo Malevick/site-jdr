@@ -1,0 +1,42 @@
+.loading{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.loading div {
+	position: relative;
+	width: 5rem;
+	height: 5rem;
+	margin: auto;
+}
+
+.loading .wait-background {
+	font-size: 5rem;
+  fill: var(--header-text-color);
+  opacity: 0.2;
+	position: absolute;
+}
+
+.loading .wait {
+	font-size: 5.6rem;
+	animation-name: hourglassRotation;
+	animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  fill: var(--header-text-color);
+  animation-timing-function: linear;
+	position: absolute;
+	top: -3px;
+  left: -3px;
+}
+
+@keyframes hourglassRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

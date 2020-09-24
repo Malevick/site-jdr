@@ -1,0 +1,19 @@
+.system {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 1.3rem;
+  margin: auto;
+}
+.system li{
+  padding: 0.2rem;
+}
+
+.system ul{
+  padding: 1rem;
+}
+
+.system h4{
+  text-align: center;
+}

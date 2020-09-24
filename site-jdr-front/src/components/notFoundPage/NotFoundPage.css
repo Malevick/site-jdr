@@ -1,0 +1,21 @@
+.not-found-page{
+  color: white;
+}
+
+.not-found-page svg{
+  max-width: 10rem;
+  fill: var(--link-color);
+}
+
+.not-found-page a:hover svg{
+  transform: scale(1.1, 1.1);
+  fill: var(--link-hover-color);
+}
+
+.not-found-page{
+  padding: 3rem 0rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
