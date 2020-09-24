@@ -183,9 +183,10 @@ function Roleplay() {
                     <ul>
                       {annexes.map((annexe) =>
                         <li key={annexe.id}>
-                          <Link to={'/annexes/' + annexe.id}  params={{id : annexe.id}}>
+                          <a href={HOST + annexe.file.url} target='_blank'>
                             {annexe.name}
-                          </Link>
+                          </a>
+                            - par <Link to={'/profils/' + annexe.author.id} params={{id : annexe.author.id}}>{annexe.author.pseudo}</Link>
                         </li>
                         )
                       }

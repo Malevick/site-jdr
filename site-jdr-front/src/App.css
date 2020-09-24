@@ -112,7 +112,7 @@ section {
   margin : 1rem
 }
 
-.list-title{
+.list-title, .list-second-title{
   text-align: left;
   margin-left: 2rem;
   padding: 0.5rem;
@@ -141,12 +141,12 @@ section {
 
   main{
     padding: 0rem;
-    padding-top: 1rem;
   }
 
-  .list-title{
+  .list-title, .list-second-title{
     text-align: center;
     margin-left: 0rem;
     display: block;
+    padding-top: 1rem;
   }
 }

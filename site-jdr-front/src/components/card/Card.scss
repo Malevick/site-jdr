@@ -12,14 +12,15 @@
   cursor: pointer;
   transition: 0.2s;
   color: var(--link-color);
-  background: radial-gradient(rgba(255, 234, 206, 1),rgba(243, 149, 48, 0.7), rgba(143, 113, 88, 0.3), rgba(53, 57, 59, 0.1));
-  background: radial-gradient(rgb(206, 237, 255),rgba(48, 116, 243, 0.7), rgba(88, 103, 143, 0.3), rgba(53, 57, 59, 0.1));
+  //background: radial-gradient(rgba(255, 234, 206, 1),rgba(243, 149, 48, 0.7), rgba(143, 113, 88, 0.3), rgba(53, 57, 59, 0.1));
+  //background: radial-gradient(rgb(206, 237, 255),rgba(48, 116, 243, 0.7), rgba(88, 103, 143, 0.3), rgba(53, 57, 59, 0.1));
   text-orientation: upright;
   background-size: cover;
   background-position: center;
 }
 
-.card h4{
+.card h4,
+.card h5{
   padding: 1.5rem 0.5rem;
   background-image: linear-gradient(rgba(0, 7, 10, 0.9), rgba(0, 8, 12, 0));
   width: 100%;
@@ -63,5 +64,10 @@
   .card{
     height: 100%;
     width: 100%;
+    background-color: #514031;
+    background-blend-mode: overlay;
+  }
+  .card h4, .card h4{
+    background-image: none;
   }
 }

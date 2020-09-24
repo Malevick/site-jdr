@@ -12,7 +12,7 @@ export default function RoleplayList() {
 
   useEffect(() => {
 
-      fetch( HOST +"/roleplays", {
+      fetch( HOST +"/roleplays?_sort=id:DESC", {
         method: "GET",
         headers: {
           'Content-Type' : 'application/json'

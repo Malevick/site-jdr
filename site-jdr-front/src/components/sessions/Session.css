@@ -1,4 +1,4 @@
-.personnage-secondaire{
+.session{
   padding: 1rem;
   display: flex;
   flex-flow: row nowrap;
@@ -8,17 +8,21 @@
   max-width: 120rem;
 }
 
-.personnage-secondaire-content{
+.session .thumbnail{
+  margin-right: 0.8rem;
+}
+
+.session-content{
   padding: 1rem 0rem;
 }
 
-.personnage-secondaire-main{
+.session-main{
   padding: 5rem;
   background-color: white;
   max-width: 100%;
 }
 
-.personnage-secondaire-header{
+.session-header{
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
@@ -26,24 +30,25 @@
   max-width: 100%;
 }
 
-.personnage-secondaire-main h1,
-.personnage-secondaire-main h2,
-.personnage-secondaire-main h3,
-.personnage-secondaire-main h4,
-.personnage-secondaire-main h5,
-.personnage-secondaire-main .personnage-secondaire-content {
+.session-main h1,
+.session-main h2,
+.session-main h3,
+.session-main h4,
+.session-main h5,
+.session-main .session-content {
   color: var(--background-header-color)
 }
 
-.personnage-secondaire-main a{
+.session-main a{
   color: var(--link-hover-color);
   text-decoration: underline transparent;
 }
-.personnage-secondaire-main a:hover{
+
+.session-main a:hover{
   text-decoration: underline;
 }
 
-.personnage-secondaire .img{
+.session .img{
   width: 20rem;
   height: 20rem;
   background-position: center;
@@ -51,44 +56,71 @@
   margin-right: 2rem;
 }
 
-.personnage-secondaire-header h5{
+.session-header h5{
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-flow: row wrap;
 }
 
-.personnage-secondaire .joueur .thumbnail,
-.personnage-secondaire .jdr a{
+.session .joueur .thumbnail,
+.session .jdr a{
   margin : 0rem 0.5rem
 }
 
-.personnage-secondaire aside{
+.session aside{
   padding: 1rem ;
   min-width: 22rem;
   background-image: linear-gradient(var(--background-header-color), transparent);
   margin-left: 1rem;
 }
 
-.personnage-secondaire aside h4{
+.session aside h4{
   text-align: center;
   width: 100%;
 }
 
-.personnage-secondaire aside .img{
+.session aside .img{
   margin: 0rem;
 }
 
-.personnage-secondaire aside li a{
-  display: inline;
+.session aside a{
+  padding-left: 1rem;
+  list-style: none;
+  font-size: 1.3rem;
+  justify-content: flex-start;
 }
 
+.session-nav{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.session-nav a:hover{
+  text-decoration: none;
+}
+.session-nav a{
+  text-decoration: none;
+}
+
+.session-nav>a span{
+  opacity: 0;
+  padding: 0rem 0.5rem;
+}
+
+.session-nav>a:hover span{
+  opacity: 1;
+}
+
+
 @media screen and (max-width : 768px){
-  .personnage-secondaire{
-    flex-flow : column wrap;
+  .session{
+    flex-flow : column-reverse wrap;
   }
 
-  .personnage-secondaire aside{
+  .session aside{
     position: static;
     width: 100%;
     display: flex;
@@ -98,38 +130,51 @@
     margin: 0px;
   }
 
-  .personnage-secondaire aside>div{
+  .session aside>div{
     padding: 0.5rem;
   }
 
-  .personnage-secondaire aside h4,
-  .personnage-secondaire aside h5{
+  .session aside h4,
+  .session aside h5{
     text-align: center;
   }
 
-  .personnage-secondaire aside p,
-  .personnage-secondaire aside li{
+  .session aside p,
+  .session aside li{
     padding-left: 0rem;
   }
   
+  .session-nav>a span{
+    opacity: 1;
+  }
+
 }
 
 @media screen and (max-width: 480px){
   
-  .personnage-secondaire-header{
+  .session-header{
     flex-flow : column nowrap;
     max-width: 100%;
   }
 
-  .personnage-secondaire-header .img{
+  .session-header .img{
     margin: 0px;
   }
   
-  .personnage-secondaire-main{
+  .session-main{
     padding: 2rem
   }
 
-  .personnage-secondaire{
+  .session{
     padding: 0rem;
   }
+
+  .session-nav a{
+    font-size: 2.5rem;
+  }
+  .session-nav>a span{
+    display: none;
+  }
+
 }
+

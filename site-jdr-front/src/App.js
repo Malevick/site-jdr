@@ -11,6 +11,9 @@ import MainCharacter from './components/mainCharacters/MainCharacter';
 import NotFoundPage from './components/notFoundPage/NotFoundPage';
 import SecondaryCharacterList from './components/secondaryCharacter/SecondaryCharacterList';
 import SecondaryCharacter from './components/secondaryCharacter/SecondaryCharacter';
+import Session from './components/sessions/Session';
+import SessionList from './components/sessions/SessionList';
+import AnnexesList from './components/annexes/AnnexesList';
 
 function App() {
 
@@ -27,6 +30,9 @@ function App() {
             <Route path={'/personnages-principaux'} component={MainCharactersList}></Route>
             <Route path={'/personnages-secondaires/:id'} component={SecondaryCharacter}></Route>
             <Route path={'/personnages-secondaires'} component={SecondaryCharacterList}></Route>
+            <Route path={'/seances/:id'} component={Session}></Route>
+            <Route path={'/seances'} component={SessionList}></Route>
+            <Route path={'/annexes'} component={AnnexesList}></Route>
             <Route path={'/connexion'} component={Login}></Route>
             <Route path='*' component={NotFoundPage} />
           </Switch>

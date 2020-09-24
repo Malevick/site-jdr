@@ -6,7 +6,7 @@ import {getRandom, HOST} from '../../utilities/Const';
  * @param {Object} props - article
  * @param {number} props.id - id de l'article
  * @param {string} props.name - nom/titre de l'article
- * @param {string} props.type - type d'article
+ * @param {string} props.other - information secondaire
  * @param {stryle} props.img - image a afficher 
  */
 function Card(props) {
@@ -72,7 +72,7 @@ function Card(props) {
         <div onMouseOver={enter} onMouseOut={leave} className="card" id={article.id} 
           style={style}>
             <h4>{article.name}</h4>
-            { article.type !== undefined && <h2>{article.type}</h2>}
+            { article.other !== undefined && <h5>{article.other}</h5>}
         </div>
         :
         <p>Aucun article à afficher</p>

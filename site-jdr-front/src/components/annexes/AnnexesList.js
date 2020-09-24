@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
 import { HOST } from '../../utilities/Const';
 import Card from '../card/Card';
 import Loading from '../loading/Loading';
-import './SecondaryCharacterList.css';
+import './AnnexesList.css'
 
-function SecondaryCharacterList() {
-
+function AnnexesList() {
   const [roleplays, setRoleplays] = useState([]);
   const [roleplaysAreLoading, setRoleplaysAreLoading] = useState(true);
 
   useEffect(() => {
-
     fetch( HOST +"/roleplays?_sort=id:DESC", {
       method: "GET",
       headers: {
@@ -19,33 +16,32 @@ function SecondaryCharacterList() {
       }
     })
     .then(response => response.json())
-    .then(datas => {
-
-      setRoleplays(datas);
+    .then(json => {
+      console.log(json)
+      setRoleplays(json);
     })
     .finally(()=>{
       setRoleplaysAreLoading(false);
     });
-    
-}, [])
+  }, [])
 
   return (
     roleplaysAreLoading ? 
       <Loading />
     : 
-      <section className='secondary-characters-list'>
-        <h1 className='list-title'>Personnages Secondaires</h1>
-        <div className='secondary-characters-list-content'>
+      <section className='roleplays-list'>
+        <h1 className='list-title'>Annexes</h1>
+        <div className='roleplays-list-content'>
           {roleplays.map((roleplay) =>
-            roleplay.secondary_characters.length > 0 &&
+            roleplay.annexes.length > 0 &&
             <div key={roleplay.id}>
               <h2 className='list-second-title'>{roleplay.name}</h2>
               <div className='list'>
               {
-                roleplay.secondary_characters.map((secondaryCharacter) =>
-                <Link to={'/personnages-secondaires/' + secondaryCharacter.id} key={secondaryCharacter.id} params={{id : secondaryCharacter.id}}>
-                <Card article={{id : secondaryCharacter.id, name : secondaryCharacter.name, img : secondaryCharacter.img}}/>
-              </Link>
+                roleplay.annexes.map((annexe) =>
+                <a key={annexe.id} href={HOST + annexe.file.url} target='_blank'>
+                  <Card article={{id : annexe.id, name : annexe.name, img : annexe.file, other: "par " + annexe.author.pseudo }}/>
+                </a>
                 )
               }
               </div>
@@ -56,4 +52,4 @@ function SecondaryCharacterList() {
   )
 }
 
-export default SecondaryCharacterList
+export default AnnexesList
